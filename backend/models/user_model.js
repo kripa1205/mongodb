@@ -1,18 +1,23 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-const userSchema = mongoose.Schema({
-    name:{
-        type:String,
-        require:true,
+const userSchema = mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
     },
-
-    email:{
-        type:String
+    email: {
+      type: String,
     },
-    password:{
-        type:String
-    }
+    password: {
+      type: String,
+    },
+    isVerified: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  { timestamps: true }
+);
 
-},{timestamps:true})
-
-module.exports = mongoose.model('kripa', userSchema)
+module.exports = mongoose.model("kripa", userSchema);
